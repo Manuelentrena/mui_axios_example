@@ -1,10 +1,14 @@
 import Container from "./components/layouts/container";
+import { ThemeProvider } from "@material-ui/styles";
+import theme from "./styles/theme";
 
 function App() {
   return (
-    <div className="App">
-      <Container />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Container />
+      </div>
+    </ThemeProvider>
   );
 }
 

@@ -10,8 +10,8 @@ import {
   Card,
   CardActions,
   CardContent,
-  Button,
   Typography,
+  Button,
 } from "@material-ui/core";
 
 // Styles
@@ -57,7 +57,12 @@ export default function Post({ value }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button variant="contained" color="primary" size="small">
+          Learn More
+        </Button>
+        <Button variant="contained" color="secondary" size="small">
+          Click ME!
+        </Button>
       </CardActions>
     </Card>
   );
