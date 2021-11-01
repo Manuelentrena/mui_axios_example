@@ -38,16 +38,43 @@ theme.overrides = {
       fontWeight: 700,
     },
   },
+  MuiPaper: {
+    root: {
+      margin: "0.5rem",
+      padding: 0,
+    },
+  },
+  MuiGrid: {
+    root: {
+      /* height: "100%", */
+    },
+  },
   MuiCard: {
     root: {
+      height: "100%",
       backgroundColor: amber[50],
-      marginTop: 10,
+      /* marginTop: 10, */
       color: deepPurple[900],
       "&:hover": {
         backgroundColor: amber[100],
         transform: "translateY(-2%)",
         cursor: "grab",
       },
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
+    },
+  },
+  MuiCardContent: {
+    root: {
+      margin: "1rem",
+      padding: 0,
+    },
+  },
+  MuiCardActions: {
+    root: {
+      margin: "1rem",
+      padding: 0,
     },
   },
 };
