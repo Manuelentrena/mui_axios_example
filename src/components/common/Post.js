@@ -16,18 +16,11 @@ import {
 // Styles
 import "./style.css";
 
-/* const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
-}); */
-
 export default function Post({ value }) {
   const instance = useMemo(
     () => axios.create({ baseURL: `${URL}/${value}` }),
     [value]
   );
-  /*  const classes = useStyles(); */
   const [note, setNote] = useState([]);
   const [loading, setLoading] = useState(false);
 

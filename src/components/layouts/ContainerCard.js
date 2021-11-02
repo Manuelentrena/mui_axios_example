@@ -1,11 +1,11 @@
 // Global
 import { arrayPost } from "../../constant/global";
 // Components
-import Post from "../common/post";
+import Post from "../common/Post";
 // Material UI
 import { Grid } from "@material-ui/core";
 
-export default function Container() {
+export default function ContainerCard() {
   return (
     <Grid container spacing={2}>
       {arrayPost.map((value) => {
