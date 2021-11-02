@@ -15,7 +15,6 @@ export default function ContainerPagination() {
     setLoading(true);
     instance.get().then((res) => {
       const { data } = res;
-      console.log(data);
       setNotes(data);
       setLoading(false);
     });

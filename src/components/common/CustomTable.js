@@ -10,9 +10,12 @@ import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
+import CustomRow from "./CustomRow";
+
 export default function CustomTable({ notes }) {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
+
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, notes.length - page * rowsPerPage);
 
@@ -32,18 +35,12 @@ export default function CustomTable({ notes }) {
             ? notes.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             : notes
           ).map((note) => (
-            <TableRow key={note.id}>
-              <TableCell component="th" scope="row">
-                {note.id}
-              </TableCell>
-              <TableCell align="left">{note.title}</TableCell>
-              <TableCell align="left">{note.body}</TableCell>
-            </TableRow>
+            <CustomRow key={note.id} note={note} />
           ))}
 
           {emptyRows > 0 && (
             <TableRow style={{ height: 53 * emptyRows }}>
-              <TableCell colSpan={6} />
+              <TableCell colSpan={12} />
             </TableRow>
           )}
         </TableBody>
@@ -51,7 +48,6 @@ export default function CustomTable({ notes }) {
           <TableRow>
             <TablePagination
               rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
-              colSpan={3}
               count={notes.length}
               rowsPerPage={rowsPerPage}
               page={page}
@@ -61,7 +57,6 @@ export default function CustomTable({ notes }) {
               }}
               onPageChange={handleChangePage}
               onRowsPerPageChange={handleChangeRowsPerPage}
-              /* ActionsComponent={TablePaginationActions} */
             />
           </TableRow>
         </TableFooter>
